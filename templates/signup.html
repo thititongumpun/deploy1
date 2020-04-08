@@ -1,0 +1,42 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Sign Up
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<!-- <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+<link rel="stylesheet" href="{{url_for('.static', filename='signin.css')}}"> -->
+
+<link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.0/examples/sign-in/signin.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <form class="form-signin" method="POST" action="/signup">
+  
+    <h2 class="form-signin-heading">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign Up</h2>
+    {{ form.hidden_tag() }}
+    {{ wtf.form_field(form.username) }}
+    {{ wtf.form_field(form.password) }}
+    
+    
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+    <button class="btn btn-lg btn-primary btn-block" type="button" value="Go back!" onclick="history.back()">Back</button>
+    
+  </form>
+
+  
+<p class="mt-5 mb-3 text-muted text-center">&copy; Thiti Tongumpun 2020</p>
+</div> <!-- /container -->
+{% endblock %}
